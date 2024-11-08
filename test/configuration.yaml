@@ -1,0 +1,62 @@
+default_config:
+
+automation: !include test/automations.yaml
+
+demo:
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.17.0.0/24
+
+logger:
+  default: warning
+  logs:
+    custom_components.browser_mod: info
+
+# debugpy:
+
+# browser_mod:
+#   devices:
+#     camdevice:
+#       camera: true
+#     testdevice:
+#       alias: test
+#     fully:
+#       force_stay_awake: true
+#     fully2:
+#       screensaver: true
+
+lovelace:
+  mode: storage
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: yaml
+      filename: test/lovelace.yaml
+
+frontend:
+  themes:
+    red:
+      primary-color: red
+    test:
+      card-mod-theme: test
+      card-mod-more-info-yaml: |
+        $: |
+          .mdc-dialog {
+            backdrop-filter: grayscale(0.7) blur(5px);
+          }
+
+tts:
+  - platform: google_translate
+#    base_url: !env_var OUT_ADDR
+
+script:
+  cm_debug:
+    sequence:
+      - service: browser_mod.debug
+  print_id:
+    sequence:
+      - service: system_log.write
+        data:
+          message: "Button was clicked in {{browser_id}}."

@@ -1,0 +1,287 @@
+x-anchors:
+  default: &default
+    type: button
+    icon: mdi:star
+
+  desc: &desc
+    type: markdown
+    style: |
+      code {
+        font-size: 8pt;
+        line-height: normal;
+        white-space: pre-wrap;
+        }
+
+title: Popup
+cards:
+  - <<: *desc
+    content: |
+      ## Common:
+      ```
+        type: button
+        icon: mdi:star
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            ...
+      ```
+
+  # Default
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Default
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Default
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Default
+              content:
+                type: markdown
+                content: Popup!
+
+  # size: wide
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Wide
+            size: wide
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Wide
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Wide
+              size: wide
+              content:
+                type: markdown
+                content: Popup!
+
+  # size: fullscreen
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Fullscreen
+            size: fullscreen
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Fullscreen
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Fullscreen
+              size: fullscreen
+              content:
+                type: markdown
+                content: Popup!
+
+  # dismissable: false
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Non-dismissable
+            dismissable: false
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Non-dismissable
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Non-dismissable
+              dismissable: false
+              content:
+                type: markdown
+                content: Popup!
+
+  # autoclose: true
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Autoclose
+            autoclose: true
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Autoclose
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Autoclose
+              autoclose: true
+              content:
+                type: markdown
+                content: Popup!
+
+  # timeout: 5000
+  - type: vertical-stack
+    cards:
+      - <<: *desc
+        content: |
+          ```
+          service: popup
+          data:
+            title: Timeout
+            timeout: 5000
+            content:
+              type: markdown
+              content: Popup!
+          ```
+      - <<: *default
+        name: Timeout
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: popup
+            data:
+              title: Timeout
+              timeout: 5000
+              content:
+                type: markdown
+                content: Popup!
+
+  - <<: *default
+    name: Card content
+    tap_action:
+      action: fire-dom-event
+      browser_mod:
+        service: popup
+        data:
+          title: Card
+          content:
+            type: entities
+            entities:
+              - light.bed_light
+              - light.ceiling_lights
+              - light.kitchen_lights
+  - <<: *default
+    name: Card footer
+    tap_action:
+      action: fire-dom-event
+      browser_mod:
+        service: popup
+        data:
+          title: Card
+          right_button: OK
+          content:
+            type: entities
+            entities:
+              - light.bed_light
+              - light.ceiling_lights
+              - light.kitchen_lights
+
+  - <<: *default
+    name: Form content
+    tap_action:
+      action: fire-dom-event
+      browser_mod:
+        service: popup
+        data:
+          title: Form
+          content:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
+            - name: Name
+              label: Label
+              default: Default value
+              selector:
+                text:
